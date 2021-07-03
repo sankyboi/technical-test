@@ -30,7 +30,10 @@
     <script>
         var options = {
             html5: {
-                hlsjsConfig: {},
+                  hlsjsConfig = {
+                    "maxBufferSize": 0,
+                    "maxBufferLength": 30,
+                    },
             },
             dnaConfig: {},
         };
