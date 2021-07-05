@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "5597e140-188a-4111-9a4a-0297a6f56270",
+		"name": "Technical Test - Sanket Shettennavar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create restriction list",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "API-Key {{YOUR_API_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"rule_shettennavar\",\r\n    \"type\":\"whitelist\",\r\n    \"countries\":[\"France\", \"Spain\"],\r\n    \"isps\":[\"Free Mobile SAS\", \"Wifirst S.A.S.\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "api.streamroot.io/v3/customers/{{YOUR_CUSTOMER_ID}}/geo-isp-restrictions/lists",
+					"host": [
+						"api",
+						"streamroot",
+						"io"
+					],
+					"path": [
+						"v3",
+						"customers",
+						"{{YOUR_CUSTOMER_ID}}",
+						"geo-isp-restrictions",
+						"lists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all properties",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.streamroot.io/v3/customers/{{YOUR_CUSTOMER_ID}}/dna/properties",
+					"host": [
+						"api",
+						"streamroot",
+						"io"
+					],
+					"path": [
+						"v3",
+						"customers",
+						"{{YOUR_CUSTOMER_ID}}",
+						"dna",
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create property and/or Update geoblockingListId",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"testpropertysanket\",\r\n        \"activationRatio\": 1,\r\n        \"superSeederRatio\": 1,\r\n        \"detectRangeRequest\": false,\r\n        \"geoblockingListId\": \"b688a3ae-2423-4d3d-9551-9c895e79cdbf\",\r\n        \"networkActivation\": {\r\n            \"wifiEthernetUpload\": true,\r\n            \"wifiEthernetDownload\": true,\r\n            \"cellularOtherUpload\": true,\r\n            \"cellularOtherDownload\": true\r\n        },\r\n        \"ssai\": {\r\n            \"enabled\": false,\r\n            \"provider\": \"\",\r\n            \"options\": \"\"\r\n        },\r\n        \"enterprise\": {\r\n            \"customStunUrls\": [],\r\n            \"customSignalingUrl\": \"\",\r\n            \"localNetworkOnly\": false,\r\n            \"matching\": false,\r\n            \"matchingMap\": false,\r\n            \"matchingMask\": false,\r\n            \"unknownSubnetAllow\": false,\r\n            \"mask\": 0\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "api.streamroot.io/v3/customers/{{YOUR_CUSTOMER_ID}}/dna/properties",
+					"host": [
+						"api",
+						"streamroot",
+						"io"
+					],
+					"path": [
+						"v3",
+						"customers",
+						"{{YOUR_CUSTOMER_ID}}",
+						"dna",
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show all restriction lists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.streamroot.io/v3/customers/{{YOUR_CUSTOMER_ID}}/geo-isp-restrictions/lists",
+					"host": [
+						"api",
+						"streamroot",
+						"io"
+					],
+					"path": [
+						"v3",
+						"customers",
+						"{{YOUR_CUSTOMER_ID}}",
+						"geo-isp-restrictions",
+						"lists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show a specific restriction list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.streamroot.io/v3/customers/{{YOUR_CUSTOMER_ID}}/geo-isp-restrictions/lists/{{YOUR_LIST_ID}}",
+					"host": [
+						"api",
+						"streamroot",
+						"io"
+					],
+					"path": [
+						"v3",
+						"customers",
+						"{{YOUR_CUSTOMER_ID}}",
+						"geo-isp-restrictions",
+						"lists",
+						"{{YOUR_LIST_ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a restriction list",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "api.streamroot.io/v3/customers/{YOUR_CUSTOMER_ID}/geo-isp-restrictions/lists/{{YOUR_LIST_ID}}",
+					"host": [
+						"api",
+						"streamroot",
+						"io"
+					],
+					"path": [
+						"v3",
+						"customers",
+						"{YOUR_CUSTOMER_ID}",
+						"geo-isp-restrictions",
+						"lists",
+						"{{YOUR_LIST_ID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update restriction list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "API-Key {{YOUR_API_KEY}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "YOUR_CUSTOMER_ID",
+			"value": "your customer ID"
+		},
+		{
+			"key": "YOUR_API_KEY",
+			"value": "API-Key"
+		},
+		{
+			"key": "YOUR_LIST_ID",
+			"value": "your list ID"
+		}
+	]
+}
