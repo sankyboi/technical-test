@@ -5,11 +5,11 @@
     <meta charset="utf-8" />
     <title>test-page</title>
 
+   <!-- Assigning playlist URL to a const. to identify pathname -->
     <script>
+        const streamurl = new URL('https://vod-l3-streamroot.secure.footprint.net/vodOrigin/tos1500.mp4/playlist.m3u8');
         function contentIdFn(contentUrl) {
-            var l = document.createElement("a");
-            l.href = contentUrl;
-            return l.pathname;
+            return streamurl.pathname;
         }
     </script>
 
